@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "ipnhc2wa",
+    "username": "umj-usuario",
+    "password": "umj-senha",
     "database": "postgres",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"
   },
   "test": {
-    "username": "postgres",
-    "password": "ipnhc2wa",
+    "username": "umj-usuario",
+    "password": "umj-senha",
     "database": "postgres",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"
   },
   "production": {
-    "username": "postgres",
-    "password": "ipnhc2wa",
+    "username": "umj-usuario",
+    "password": "umj-senha",
     "database": "postgres",
     "host": "127.0.0.1",
     "port": 5432,
