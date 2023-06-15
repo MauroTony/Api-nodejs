@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const Emprestimo = require('../models/emprestimo');
+const model = require('../models');
 const authenticateUser = require("../middlewares/auth");
 
 // Rota GET para buscar todos os empréstimos
 router.get('/', authenticateUser, async (req, res) => {
     try {
-        const emprestimos = await Emprestimo.findAll();
+        const emprestimos = await model.Emprestimo.findAll();
         res.json(emprestimos);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -16,7 +16,7 @@ router.get('/', authenticateUser, async (req, res) => {
 // Rota POST para criar um novo empréstimo
 router.post('/', authenticateUser, async (req, res) => {
     try {
-        const emprestimo = await Emprestimo.create(req.body);
+        const emprestimo = await model.Emprestimo.create(req.body);
         res.json(emprestimo);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -26,7 +26,7 @@ router.post('/', authenticateUser, async (req, res) => {
 // Rota PUT para atualizar um empréstimo existente
 router.put('/:id', authenticateUser, async (req, res) => {
     try {
-        const emprestimo = await Emprestimo.findByPk(req.params.id);
+        const emprestimo = await model.Emprestimo.findByPk(req.params.id);
         if (!emprestimo) {
             return res.status(404).json({ error: 'Empréstimo não encontrado' });
         }
@@ -40,7 +40,7 @@ router.put('/:id', authenticateUser, async (req, res) => {
 // Rota DELETE para excluir um empréstimo
 router.delete('/:id', authenticateUser, async (req, res) => {
     try {
-        const emprestimo = await Emprestimo.findByPk(req.params.id);
+        const emprestimo = await model.Emprestimo.findByPk(req.params.id);
         if (!emprestimo) {
             return res.status(404).json({ error: 'Empréstimo não encontrado' });
         }
