@@ -30,10 +30,4 @@ Após a configuração e as migrações do banco de dados, você pode iniciar o 
 # Documentação
 
 https://documenter.getpostman.com/view/14325061/2s93sgXqoi
-    
-# Grupo
-- Mauro
-- Hylan
-- Gabriel
-- Airton
-- Vinicius
+
